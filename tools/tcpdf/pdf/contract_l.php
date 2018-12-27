@@ -1,10 +1,40 @@
 <?php
+
+
+
+require_once('../../NumerosLetras.php');
+require_once('tcpdf_include.php');
+
+class MYPDF extends TCPDF {
+
+    //Page header
+    public function Header() {
+        // Logo
+        $image_file = getcwd().'\..\images\logo2.jpg';
+        $this->Image($image_file, 10, 10, 60, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        // Set font
+        $this->SetFont('helvetica', 'B', 20);
+        // Title
+        $this->Cell(0, 15, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+    }
+
+    // Page footer
+    public function Footer() {
+        // Position at 15 mm from bottom
+        $this->SetY(-15);
+        // Set font
+        $this->SetFont('helvetica', 'I', 8);
+        // Page number
+        $this->Cell(0, 10, 'Pagina '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
+    }
+}
+
 class Contrac_l{
 
 	public function print_Contrac_l(){
-	require_once('tcpdf_include.php');
+	
 	// create new PDF document
-	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);	
+	$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);	
 	//*Formato de Fecha
 	date_default_timezone_set('America/Los_Angeles');
 	$pdf->SetMargins(20,30,20);
@@ -13,18 +43,17 @@ class Contrac_l{
 	
 	$fecha = date('d')."/".date('n'). "/".date('Y') ;
 	$ahora = time();
-	$nombre = "CORZO LARA,
-RODRIGO FERNANDO";
-	$dni = "71479069";
-	$direccion = "La Explanada F-4, del Distrito de Cayma";
-	$cargo = "GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO";
-	$pago = "1,132.00";
-	$pago_l = "Un Mil Ciento Treinta y Dos con 00/100 Soles";
+	$dni = $_POST['dni'];
+	$nombre = $_POST['nombre'];
+	$direccion = $_POST['direccion'];
+	$cargo = $_POST['cargo'];
+	$pago = $_POST['sueldo'];
+	$pago_l = NumeroALetras::convertir($pago,"soles");
 	//**Obteniendo el ID
 	$duracion = "30";
 	$duracion_l = "Treinta";
-	$fecha_i = "17 de Octubre del 2018";
-	$fecha_f = "16 de Noviembre del  2018";
+	$fecha_i = $_POST['fecha_i'];
+	$fecha_f = $_POST['fecha_f'];
 	$html = <<<EOF
 	<div style="font-size:9px; ">
 	<table style="line-height: 20px; ">

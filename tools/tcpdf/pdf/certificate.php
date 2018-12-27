@@ -14,12 +14,13 @@ class Certificate{
 	$fecha = date('d')."/".date('n'). "/".date('Y') ;
 	$ahora = time();
 	//**Obteniendo el ID
-	$nombre = "PAMELA GISSELL, MEDINA ZUÑIGA";
-	$dni = "44685356";
+	$dni = $_POST['dni'];
+	$nombre = $_POST['nombre'];
+	
 	$fecha_i = "26 de junio del año 2018";
 	$fecha_f = "24 de julio del año 2018";
 	$cargo = "Gestor de Atención al Cliente";
-	$hoy_l = "24 de julio del 2018";
+	$hoy_l = $fecha;
 	$html = <<<EOF
 	<div style="font-size:10px; ;">
 	<table style="line-height: 20px; ">

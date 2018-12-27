@@ -4,19 +4,21 @@ class Delivery{
 	public function print_Delivery(){
 	require_once('tcpdf_include.php');
 	// create new PDF document
-	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-	$pdf->AddPage();	
+	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);	
 	//*Formato de Fecha
 	date_default_timezone_set('America/Los_Angeles');
+	$pdf->SetMargins(25,30,25);
+	$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+	$pdf->AddPage();
 	$fecha = date('d')."/".date('n'). "/".date('Y') ;
 	$ahora = time();
-	$nombre = "Noombre";
-	$ruc = "ruc_test";
+	$ruc = $_POST['ruc'];
+	$nombre = $_POST['razon'];
 	//**Obteniendo el ID
 
 	$imagen = "Imagen_test";
 	$html = <<<EOF
-	<div style="font-size:8px; ;" >
+	<div style="font-size:8px; ;">
 	<table style="line-height: 20px; ">
 		<tr>
 			<td style="text-align:left; solid #666; color:#333">Señores: $nombre</td>

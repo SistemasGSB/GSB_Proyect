@@ -111,6 +111,9 @@ session_start();
              $_GET["ruta"] == "users" ||
              $_GET["ruta"] == "meeting" ||
              $_GET["ruta"] == "clients"||
+             $_GET["ruta"] == "ruc"||
+             $_GET["ruta"] == "dni"||
+             $_GET["ruta"] == "sealEmp"||
             $_GET["ruta"] == "attendance"){
 
             include "pages/".$_GET["ruta"].".php";
@@ -146,6 +149,9 @@ session_start();
 <script src="views/js/calendar.js"></script>
 <script src="views/js/download.js"></script>
 <script src="views/js/attendance.js"></script>
+<script src="views/js/ruc.js"></script>
+<script src="views/js/dni.js"></script>
+<script src="views/js/seal_e.js"></script>
 
 </body>
 </html>

@@ -1,10 +1,37 @@
 <?php
+
+
+require_once('../../NumerosLetras.php');
+require_once('tcpdf_include.php');
+
+class MYPDF extends TCPDF {
+
+    //Page header
+    public function Header() {
+        // Logo
+        $image_file = getcwd().'\..\images\logo2.jpg';
+        $this->Image($image_file, 10, 10, 60, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+        // Set font
+        $this->SetFont('helvetica', 'B', 20);
+        // Title
+        $this->Cell(0, 15, '', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+    }
+
+    // Page footer
+    public function Footer() {
+        // Position at 15 mm from bottom
+        $this->SetY(-15);
+        // Set font
+        $this->SetFont('helvetica', 'I', 8);
+        // Page number
+        $this->Cell(0, 10, 'Pagina '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
+    }
+}
 class Contract_P{
 
 	public function print_Contract_P(){
-	require_once('tcpdf_include.php');
 	// create new PDF document
-	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+	$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 	
 	//*Formato de Fecha
 	date_default_timezone_set('America/Los_Angeles');
@@ -14,14 +41,14 @@ class Contract_P{
 	$fecha = date('d')."/".date('n'). "/".date('Y') ;
 	$ahora = time();
 	//**Obteniendo el ID
-	$nombre = "Berlanga Ponce, Fernando Raúl";
-	$dni = "40366755";
-	$cargo = "ANÁLISIS Y EVALUACIÓN DE LOS SISTEMAS DE MEDICIÓN, ELABORACIÓN DE BALANCES DE ENERGÍA EN MEDIA Y BAJA TENSIÓN";
-	$direccion = "la Calle señor de la caña 117, del Distrito de Cayma";
-	$pago = "930.00";
-	$pago_l = "novecientos treinta son 00/100 soles";
-	$fecha_i = "31 de octubre del 2018";
-	$fecha_f = "29 de diciembre del 2018";
+	$dni = $_POST['dni'];
+	$nombre = $_POST['nombre'];
+	$cargo = $_POST['cargo'];
+	$direccion = $_POST['direccion'];
+	$pago = $_POST['sueldo'];
+	$pago_l = NumeroALetras::convertir($pago,"soles");
+	$fecha_i = $_POST['fecha_i'];
+	$fecha_f = $_POST['fecha_f'];
 	$html = <<<EOF
 	<div style="font-size:9px; ;">
 	<table style="line-height: 20px; ">
@@ -40,7 +67,7 @@ class Contract_P{
 	30056, que celebran de una parte celebran de una parte, la empresa QUALITY SPECIAL SERVICE S.A.C.
 	identificado con Registro Único De Contribuyente N° 20602221980, con domicilio en Urbanización Cabaña
 	María Mz. L Lot. 12 del distrito de Arequipa, debidamente representada por el señor Feliciano Farfán
-	Romero con Documento Nacional De Identidad N° 29214345, a quien en adelante se le denominara <b>EL EMPLEADOR</b> ; y por otra parte el Sr. $nombre, identificado con identificado con
+	Romero con Documento Nacional De Identidad N° 29214345, a quien en adelante se le denominara <b>EL EMPLEADOR</b> ; y por otra parte el Sr. $nombre, identificado con
 	Documento Nacional De Identidad Nº $dni, con domicilio en $direccion, a quien en adelante se le denominará <b>EL TRABAJADOR </b>, convienen en celebrar el presente
 	contrato, en los términos y condiciones siguientes:
 	</td>
