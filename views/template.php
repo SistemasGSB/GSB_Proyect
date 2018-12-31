@@ -148,10 +148,9 @@ session_start();
 <script src="views/js/clients.js"></script>
 <script src="views/js/calendar.js"></script>
 <script src="views/js/download.js"></script>
-<script src="views/js/attendance.js"></script>
 <script src="views/js/ruc.js"></script>
 <script src="views/js/dni.js"></script>
 <script src="views/js/seal_e.js"></script>
-
+<script src="views/js/attendance.js"></script>
 </body>
 </html>

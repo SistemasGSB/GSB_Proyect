@@ -32,17 +32,25 @@ class SealController{
 					           "cuenta_cts" => $_POST["newPayC"],
 					           "carrera" => $_POST["newDegree"],
 					           "institucion" => $_POST["newInst"],
-					           "terminos" => $_POST["checkDo"],
 					           "edad" => $_POST["newYold"],
 					           "cussp" => $_POST["newCussp"],
 					           "snp" => $_POST["newSnp"],
 					           "flujo" => $_POST["newFl"],
 					           "mixta" => $_POST["newMix"],
-					           "conyugue" => $_POST["checkCon"],
-					           "asignacion" => $_POST["checkAsig"],
 					           "observacion" => $_POST["newObs"]
 					       );
-
+				if(isset($_POST["checkDo"])){
+					$datos["terminos"]=true;
+				}
+				else{ $datos["terminos"]=false;}
+				if(isset($_POST["checkCon"])){
+					$datos["conyugue"]=true;
+				}
+				else{ $datos["conyugue"]=false;}
+				if(isset($_POST["checkAsig"])){
+					$datos["asignacion"]=true;
+				}
+				else{ $datos["asignacion"]=false;}
 				$respuesta = SealModel::mdlAddSealE($tabla, $datos);
 			
 				if($respuesta == "ok"){

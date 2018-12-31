@@ -51,7 +51,12 @@
         </thead>
 
         <tbody>
+          <?php
 
+          $crearUsuario = new SealController();
+          $crearUsuario -> ctrCreateSealE();
+
+        ?>
         <?php
 
         $item = null;
@@ -197,7 +202,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control input-lg" name="newBirthday" placeholder="Fecha Nacimiento" required>
+                    <input type="text" class="form-control input-lg" id="fecha_n" name="newBirthday" placeholder="Fecha Nacimiento" autocomplete="off" required>
 
                   </div>
                 </div>
@@ -221,7 +226,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control input-lg" name="newStartD" placeholder="Fecha Ingreso" required>
+                    <input type="text" class="form-control input-lg" id="fecha_i" name="newStartD" placeholder="Fecha Ingreso" autocomplete="off" required>
 
                   </div>
                 </div>
@@ -230,7 +235,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control input-lg" name="newFinalD" placeholder="Adenda de Contrato" required>
+                    <input type="text" class="form-control input-lg" id="fecha_f" name="newFinalD" placeholder="Adenda de Contrato" autocomplete="off" required>
 
                   </div>
                 </div>
@@ -377,12 +382,7 @@
           <button type="submit" class="btn btn-primary">Guardar usuario</button>
 
         </div>
-        <?php
-
-          $crearUsuario = new SealController();
-          $crearUsuario -> ctrCreateSealE();
-
-        ?>
+        
       </form>
 
     </div>

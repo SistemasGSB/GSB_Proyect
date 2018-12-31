@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-12-2018 a las 14:37:28
+-- Tiempo de generación: 31-12-2018 a las 17:39:44
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.2.12
 
@@ -500,6 +500,163 @@ INSERT INTO `asistencia` (`id`, `ac_no`, `nombre`, `fecha_hora`) VALUES
 (458, 72654091, 'angelohuancapaza', '2018-11-30 08:14:00'),
 (459, 77503561, 'jordylopezternero', '2018-11-02 15:34:00');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id_cliente` int(11) NOT NULL,
+  `nombre` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `apellido` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `dni` int(8) NOT NULL,
+  `celular` int(10) NOT NULL,
+  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `direccion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `distrito` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `medio_captacion` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `asesor` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id_cliente`, `nombre`, `apellido`, `dni`, `celular`, `email`, `direccion`, `distrito`, `medio_captacion`, `asesor`) VALUES
+(1, 'Angelo Ruben', 'Huancapaza Ponce', 72654091, 982108377, 'Angeloponce25@gmail.com', 'Belaunde 303', 'Miraflores', 'Facebook', 'admin'),
+(2, 'SERGIO', 'MEDINA', 40641291, 987423426, 'SMEDINA@ALMAPOLIS.COM', 'AREQUIPA', 'AREQUIPA', 'Facebook', 'sjackson'),
+(3, 'Juan Jose', 'Guzman Cardenas', 74859612, 982777345, 'jguzman@gsb.com.pe', 'San Martin', 'Ciudad Mi Trabajo', 'Facebook', 'sjackson'),
+(4, 'Karla Alejandra', 'Gil Diaz', 66554477, 987654321, 'kgil@gsb.com.pe', 'Los Ruiseñores', 'Paucarpata', 'Facebook', 'admin'),
+(5, 'Ruben', 'Huancapaza', 30829275, 959967731, 'rhuancapaza@gmail.com', 'Cesar Vallejo', 'Mollendo', 'Volante', 'demo'),
+(6, 'Elena', 'Del Carpio', 90407510, 987456145, 'ecarpio@gsb.com', 'Puerto Blanco', 'Ilo', 'Feria', 'aponce'),
+(7, 'Maria Gracia', 'Linares Borja', 90406080, 947321745, 'mgracia@gmail.com', 'Los Girasoles', 'Camana', 'Oficina atencion', 'aponce'),
+(8, 'Luis Angelo', 'Reyes', 987625341, 982457665, 'lreyes@gmail.com', 'Paucarpata', 'Miraflores', 'Facebook', 'sjackson'),
+(9, 'Angelo', 'Ponce', 656541, 951742365, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Oficina atencion', 'admin'),
+(10, 'Angelo', 'Ponce', 123456789, 963852741, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'nose', 'Volante', 'admin'),
+(11, 'Angelo', 'Ponce', 32165487, 963741852, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Pagina web', 'admin'),
+(12, 'Angelo', 'Ponce', 336699777, 12345678, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Oficina atencion', 'admin'),
+(13, 'Angelo', 'Ponce', 1112224, 12341356, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Oficina atencion', 'admin'),
+(14, 'Angelo', 'Ponce', 123456773, 2147483647, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Hunter', 'Feria', 'admin'),
+(15, 'Angelo', 'Ponce', 2147483647, 123456789, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Pagina web', 'admin'),
+(16, 'Angelo', 'Ponce', 2147483647, 123456, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Oficina atencion', 'admin'),
+(17, 'Angelo', 'Ponce', 2147483647, 124562, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Pagina web', 'admin'),
+(18, 'Angelo', 'Ponce', 666999888, 2147483647, 'angeloponce25@gmail.com', 'Cesar Vallejo', 'Socabaya', 'Pagina web', 'admin'),
+(22, 'Asdflkj', 'Adjshkf', 72654098, 127364736, 'asldj@asd', 'Adsdkj', 'Asdjfh', '', 'admin'),
+(23, 'Adlkj', 'Adksja', 30824574, 987654321, 'asdlkj@sdf', 'Asdfjlk', 'Apol', 'Facebook', 'admin'),
+(24, 'Asda', 'Adsf', 12345678, 123456789, 'asnd@sad', 'Adjkhks', 'Adsfds', 'Referido', 'admin'),
+(25, 'Asa', 'Asa', 98765432, 123456789, 'asa@asa', 'Asa', 'Asa', 'Pagina web', 'admin'),
+(26, 'Usuario', 'Usuarioa', 78945632, 789654321, 'ejemplo@gmail.com', 'DIreccion', 'Distrito', 'Radio', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `seal_e`
+--
+
+CREATE TABLE `seal_e` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nombre` varchar(60) DEFAULT NULL,
+  `apellido_p` varchar(40) DEFAULT NULL,
+  `apellido_m` varchar(40) DEFAULT NULL,
+  `dni` int(8) DEFAULT NULL,
+  `cargo` varchar(200) DEFAULT NULL,
+  `fecha_i` date DEFAULT NULL,
+  `fecha_a` date DEFAULT NULL,
+  `sueldo` int(6) DEFAULT NULL,
+  `telefono` int(9) DEFAULT NULL,
+  `celular` int(9) DEFAULT NULL,
+  `direccion` varchar(500) DEFAULT NULL,
+  `distrito` varchar(300) DEFAULT NULL,
+  `mail` varchar(200) DEFAULT NULL,
+  `cuenta_s` varchar(40) DEFAULT NULL,
+  `cuenta_c` varchar(40) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT NULL,
+  `carrera` varchar(100) DEFAULT NULL,
+  `institucion` varchar(100) DEFAULT NULL,
+  `terminos` tinyint(1) DEFAULT NULL,
+  `observacion` text,
+  `fecha_n` date DEFAULT NULL,
+  `edad` int(3) DEFAULT NULL,
+  `cussp` varchar(30) DEFAULT NULL,
+  `snp` varchar(30) DEFAULT NULL,
+  `flujo` varchar(30) DEFAULT NULL,
+  `mixta` varchar(30) DEFAULT NULL,
+  `conyugue` tinyint(1) DEFAULT NULL,
+  `asignacion` tinyint(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `seal_e`
+--
+
+INSERT INTO `seal_e` (`id`, `nombre`, `apellido_p`, `apellido_m`, `dni`, `cargo`, `fecha_i`, `fecha_a`, `sueldo`, `telefono`, `celular`, `direccion`, `distrito`, `mail`, `cuenta_s`, `cuenta_c`, `estado`, `carrera`, `institucion`, `terminos`, `observacion`, `fecha_n`, `edad`, `cussp`, `snp`, `flujo`, `mixta`, `conyugue`, `asignacion`) VALUES
+(1, 'Nombre', 'Paterno', 'Materno', 98798798, 'Cargo', '2018-12-18', NULL, 897979, 987897979, 798798798, 'Direccion', 'Distrito', 'email@email', '987a97987', '9a8s7d987', 1, 'Carrera', 'Institucion', 1, 'Ob', NULL, 30, 'CUSSP', 'SNP', 'Flujo', 'Mixta', 1, 1),
+(2, 'Nombre', 'Paterno', 'Materno', 12346678, 'Cargo', '2019-01-01', '2019-01-02', 979798, 654654654, 654654654, 'Direccion', 'Distrito', 'email@email', '987a97987', '9a8s7d987', 1, 'Carrera', 'Institucion', 1, 'Obs', '2018-12-04', 30, 'CUSSP', 'SNP', 'Flujo', 'Mixta', 1, 1),
+(3, 'Nombre', 'Paterno', 'Materno', 98798789, 'Cargo', '2018-12-20', '2019-01-02', 987987, 987987987, 987987897, 'Direccion', 'Distrito', 'email@email', '987a97987', '9a8s7d987', 1, 'Carrera', 'Institucion', 1, 'OB', '2018-12-24', 30, 'CUSSP', 'SNP', 'Flujo', 'Mixta', 1, 0),
+(4, 'Nombre', 'Paterno', 'Materno', 79878979, 'Cargo', '2019-01-05', '2019-01-01', 987987, 789798797, 987987897, 'Direccion', 'Distrito', 'email@email', '987a97987', '9a8s7d987', 1, 'Carrera', 'Institucion', 0, 'kmsaklmd', '2018-12-04', 30, 'CUSSP', 'SNP', 'Flujo', 'Mixta', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `usuario` text COLLATE utf8_spanish_ci NOT NULL,
+  `password` text COLLATE utf8_spanish_ci NOT NULL,
+  `perfil` text COLLATE utf8_spanish_ci NOT NULL,
+  `foto` text COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` int(10) NOT NULL,
+  `estado` int(11) NOT NULL,
+  `ultimo_login` datetime NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `apellido` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `dni` int(8) DEFAULT NULL,
+  `direccion` varchar(500) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `distrito` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  `estado_civil` varchar(60) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `grupo_sangre` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `correo` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `celular_personal` int(9) DEFAULT NULL,
+  `operador_personal` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `celular_emergencia` int(9) DEFAULT NULL,
+  `operador_emergencia` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `telefono_emergencia` int(9) DEFAULT NULL,
+  `operador_telefono` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `celular_trabajo` int(9) DEFAULT NULL,
+  `operador_trabajo` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `horario` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `contacto_emergencia` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `dias_semana` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `horas_dia` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `parentesco` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `area` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cargo` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `aplicacion` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `acceso` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `taxi_caller` int(10) DEFAULT NULL,
+  `zoiper` int(10) DEFAULT NULL,
+  `solicitante` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha_inicio` date DEFAULT NULL,
+  `fecha_termino` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `telefono`, `estado`, `ultimo_login`, `fecha`, `apellido`, `dni`, `direccion`, `distrito`, `fecha_nacimiento`, `estado_civil`, `grupo_sangre`, `correo`, `celular_personal`, `operador_personal`, `celular_emergencia`, `operador_emergencia`, `telefono_emergencia`, `operador_telefono`, `celular_trabajo`, `operador_trabajo`, `horario`, `contacto_emergencia`, `dias_semana`, `horas_dia`, `parentesco`, `area`, `cargo`, `aplicacion`, `acceso`, `taxi_caller`, `zoiper`, `solicitante`, `fecha_inicio`, `fecha_termino`) VALUES
+(57, 'Juan Fernando Urrego', 'juan', '$2a$07$asxx54ahjppf45sd87a5auwRi.z6UsW7kVIpm0CUEuCpmsvT2sG6O', 'Vendedor', 'vistas/img/usuarios/juan/461.jpg', 0, 1, '2017-12-21 12:07:24', '2018-12-01 16:02:28', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '0', 0, '0', 0, '0', '0', '0', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/191.jpg', 982108377, 1, '2018-12-31 10:49:49', '2018-12-31 15:49:49', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '0', 0, '0', 0, '0', '0', '0', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 'Maritza Luna', 'mluna', '$2a$07$asxx54ahjppf45sd87a5aumawKBqkKu/t5yVn5oVpbu8.I0unXqba', 'Especial', 'vistas/img/usuarios/mluna/992.png', 0, 1, '2018-11-02 15:58:48', '2018-11-02 20:58:48', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '0', 0, '0', 0, '0', '0', '0', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(63, 'Demo', 'demo', '$2a$07$asxx54ahjppf45sd87a5au6eB6pERIOFn89hUR262rtQP3G4atVku', 'Vendedor', '', 982108377, 1, '2018-12-09 23:55:23', '2018-12-10 04:55:23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '0', 0, '0', 0, '0', '0', '0', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(64, 'Samuel Jackson', 'sjackson', '$2a$07$asxx54ahjppf45sd87a5aumawKBqkKu/t5yVn5oVpbu8.I0unXqba', 'Vendedor', '', 987654321, 1, '2018-12-12 17:41:56', '2018-12-12 22:41:56', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '0', 0, '0', 0, '0', '0', '0', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(65, 'Angelo Ruben Huancapaza Ponce', 'aponce', '$2a$07$asxx54ahjppf45sd87a5aumawKBqkKu/t5yVn5oVpbu8.I0unXqba', 'Vendedor', '', 532094, 1, '2018-12-10 00:01:46', '2018-12-10 05:01:46', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '0', 0, '0', 0, '0', '0', '0', '0', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
 --
 -- Índices para tablas volcadas
 --
@@ -512,6 +669,25 @@ ALTER TABLE `asistencia`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id_cliente`);
+
+--
+-- Indices de la tabla `seal_e`
+--
+ALTER TABLE `seal_e`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -520,6 +696,24 @@ ALTER TABLE `asistencia`
 --
 ALTER TABLE `asistencia`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=460;
+
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT de la tabla `seal_e`
+--
+ALTER TABLE `seal_e`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

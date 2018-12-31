@@ -49,4 +49,19 @@ $(document).ready( function () {
       }
 
     });
+
+
+  var date_n=$('#fecha_n'); //our date input has the name "date"
+  var date_i=$('#fecha_i');
+  var date_f=$('#fecha_f');
+  var contain=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+  var opt={
+    format: 'dd/mm/yyyy',
+    container: contain,
+    todayHighlight: true,
+    autoclose: true,
+  };
+  date_n.datepicker(opt);
+  date_i.datepicker(opt);
+  date_f.datepicker(opt);
   });

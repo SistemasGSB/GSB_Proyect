@@ -608,8 +608,7 @@ Las obligaciones que <b> EL TRABAJADOR </b> asume en los literales a), b), c) y 
 	<table style="line-height: 20px; ">
 		<tr>
 		<td style="text-align:justify; solid #666; color:#333">
-En señal de conformidad las partes suscriben este documento, extendido por  duplicado en la ciudad de Arequipa, a los 26 días del mes de Junio de 2018.
-
+En señal de conformidad las partes suscriben este documento, extendido por  duplicado en la ciudad de Arequipa, $fecha_f
 </td>
 			
 		</tr>

@@ -36,52 +36,45 @@ class SealModel{
 	}
 	static public function mdlAddSealE($tabla, $datos){
 
-		$stmt = Connection::connect()->prepare("INSERT INTO INSERT INTO $tabla(nombre, apellido_p, apellido_m, dni, cargo,sueldo, telefono, celular, direccion, distrito, mail, cuenta_s, cuenta_c, estado, carrera, institucion, terminos, observacion, edad, cussp, snp, flujo, mixta, conyugue, asignacion) VALUES (:nombre, :apellido_p,:apellido_m, :dni,:cargo,:sueldo,:telefono,:celular,:direccion,:distrito,:mail,:cuenta_s,:cuenta_c,true,:carrera,:institucion,:terminos,:observacion,:edad,:cussp,:snp,:flujo,:mixta,:conyugue,:asignacion)");
+		$stmt = Connection::connect()->prepare("INSERT INTO $tabla(nombre, apellido_p, apellido_m, dni, cargo,sueldo, telefono, celular, direccion, distrito, mail, cuenta_s, cuenta_c, estado, carrera, institucion, terminos, observacion, edad, cussp, snp, flujo, mixta, conyugue, asignacion,fecha_n,fecha_i,fecha_a) VALUES (:nombre, :apellido_p,:apellido_m, :dni,:cargo,:sueldo,:telefono,:celular,:direccion,:distrito,:mail,:cuentas,:cuentac,1,:carrera,:institucion,:terminos,:observacion,:edad,:cussp,:snp,:flujo,:mixta,:conyugue,:asignacion,:fecha_n,:fecha_i,:fecha_f)");
 
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":apellido_p", $datos["apellido_p"], PDO::PARAM_STR);
 		$stmt->bindParam(":apellido_m", $datos["apellido_m"], PDO::PARAM_STR);
-		$stmt->bindParam(":dni", $datos["dni"], PDO::PARAM_STR);
+		$stmt->bindParam(":dni", $datos["dni"], PDO::PARAM_INT);
 		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
 		$stmt->bindParam(":distrito", $datos["distrito"], PDO::PARAM_STR);
-		//$stmt->bindParam(":fecha_n", $datos["fecha_n"], PDO::PARAM_STR);
+
+		$f1=DateTime::createFromFormat('d/m/Y', $datos["fecha_n"])->format('Y-m-d');
+
+		$stmt->bindParam(":fecha_n", $f1, PDO::PARAM_STR);
 		$stmt->bindParam(":mail", $datos["mail"], PDO::PARAM_STR);
 		$stmt->bindParam(":cargo", $datos["cargo"], PDO::PARAM_STR);
-		//$stmt->bindParam(":fecha_i", $datos["fecha_i"], PDO::PARAM_STR);
-		//$stmt->bindParam(":fecha_f", $datos["fecha_f"], PDO::PARAM_STR);
-		$stmt->bindParam(":sueldo", $datos["sueldo"], PDO::PARAM_STR);
-		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
-		$stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_STR);
-		$stmt->bindParam(":cuenta_s", $datos["cuenta_sueldo"], PDO::PARAM_STR);
-		$stmt->bindParam(":cuenta_c", $datos["cuenta_cts"], PDO::PARAM_STR);
+		$f2=DateTime::createFromFormat('d/m/Y', $datos["fecha_i"])->format('Y-m-d');
+		$stmt->bindParam(":fecha_i", $f2, PDO::PARAM_STR);
+		$f3=DateTime::createFromFormat('d/m/Y', $datos["fecha_f"])->format('Y-m-d');
+		$stmt->bindParam(":fecha_f", $f3, PDO::PARAM_STR);
+		$stmt->bindParam(":sueldo", $datos["sueldo"], PDO::PARAM_INT);
+		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_INT);
+		$stmt->bindParam(":celular", $datos["celular"], PDO::PARAM_INT);
+		$stmt->bindParam(":cuentas", $datos["cuenta_sueldo"], PDO::PARAM_STR);
+		$stmt->bindParam(":cuentac", $datos["cuenta_cts"], PDO::PARAM_STR);
 		$stmt->bindParam(":carrera", $datos["carrera"], PDO::PARAM_STR);
 		$stmt->bindParam(":institucion", $datos["institucion"], PDO::PARAM_STR);
-		$ver = "true";
-		$fal = "false";
-		if($datos["terminos"] == "on"){
-			$stmt->bindParam(":terminos", $ver, PDO::PARAM_STR);	
-		}
-		else{
-			$stmt->bindParam(":terminos", $fal, PDO::PARAM_STR);		
-		}
 		
-		$stmt->bindParam(":edad", $datos["edad"], PDO::PARAM_STR);
+		$stmt->bindParam(":terminos", $datos["terminos"], PDO::PARAM_BOOL);	
+		
+		
+		$stmt->bindParam(":edad", $datos["edad"], PDO::PARAM_INT);
 		$stmt->bindParam(":cussp", $datos["cussp"], PDO::PARAM_STR);
 		$stmt->bindParam(":snp", $datos["snp"], PDO::PARAM_STR);
 		$stmt->bindParam(":flujo", $datos["flujo"], PDO::PARAM_STR);
 		$stmt->bindParam(":mixta", $datos["mixta"], PDO::PARAM_STR);
-		if ($datos["conyugue"] == "on") {
-			$stmt->bindParam(":conyugue", $ver , PDO::PARAM_STR);	# code...
-		}
-		else{
-			$stmt->bindParam(":conyugue", $fal, PDO::PARAM_STR);
-		}
-		if ($datos["asignacion"]=="on") {
-			$stmt->bindParam(":asignacion", $ver, PDO::PARAM_STR);	# code...
-		}
-		else{
-			$stmt->bindParam(":asignacion", $fal , PDO::PARAM_STR);
-		}
+		
+		$stmt->bindParam(":conyugue", $datos["conyugue"], PDO::PARAM_BOOL);
+		
+		$stmt->bindParam(":asignacion", $datos["asignacion"] , PDO::PARAM_STR);
+		
 		$stmt->bindParam(":observacion", $datos["observacion"], PDO::PARAM_STR);
 		
 		var_export($datos);

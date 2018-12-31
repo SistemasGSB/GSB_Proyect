@@ -12,14 +12,17 @@ $(function(){
 		success: function(datos){
 			$('.ajaxgif').addClass('hide');
 			console.log(datos);
-				$('#nombre').val(datos['nombre']);
-				$('#direccion').val(datos['direccion']);
-				$('#cargo').val(datos['cargo']);
-				$('#fecha_i').val(datos['fecha_ingreso']);
-				$('#fecha_f').val(datos['adenda_contrato']);
-				$('#sueldo').val(datos['sueldo']);
-				
-				$('.btnDownloadD').show();
+			var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+			var fi = datos['fecha_i'].split("-");
+			var fa = datos['fecha_a'].split("-");
+			$('#nombre').val(datos['nombre']);
+			$('#direccion').val(datos['direccion']);
+			$('#cargo').val(datos['cargo']);
+			$('#fecha_i').val(fi[2]+" de "+meses[parseInt(fi[1])-1]+" del "+ fi[0]);
+			$('#fecha_f').val(fa[2]+" de "+meses[parseInt(fa[1])-1]+" del "+ fa[0])
+			$('#sueldo').val(datos['sueldo']);
+			
+			$('.btnDownloadD').show();
 		}
 	});
 	return false;
