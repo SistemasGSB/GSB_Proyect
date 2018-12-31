@@ -20,7 +20,7 @@ $(function(){
 			$('#cargo').val(datos['cargo']);
 			$('#fecha_i').val(fi[2]+" de "+meses[parseInt(fi[1])-1]+" del "+ fi[0]);
 			$('#fecha_f').val(fa[2]+" de "+meses[parseInt(fa[1])-1]+" del "+ fa[0])
-			$('#sueldo').val(datos['sueldo']);
+			$('#sueldo').val("S/. "+datos['sueldo']);
 			
 			$('.btnDownloadD').show();
 		}
