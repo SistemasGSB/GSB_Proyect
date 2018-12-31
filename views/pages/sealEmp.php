@@ -100,3 +100,292 @@
   </section>
 
 </div>
+
+
+
+
+<div id="modalAddSealE" class="modal fade" role="dialog">
+   <div class="modal-dialog" style="width:1250px;">
+
+    <div class="modal-content">
+      <form role="form" method="post" enctype="multipart/form-data" id="user-form">
+           <div class="modal-header" style="background:#3c8dbc; color:white">
+
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            <h4 class="modal-title">Agregar usuario</h4>
+
+          </div>
+            <div class="modal-body">
+
+          <div class="box-body">
+
+            <!-- ENTRADA PARA EL NOMBRE -->
+            
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newName" placeholder="Nombre" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newSurname" placeholder="Apellido Paterno" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newSurnamem" placeholder="Apellido Materno" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="8" class="form-control input-lg" name="newId" placeholder="DNI" required>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newAddress" placeholder="Direccion" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newDistrict" placeholder="Distrito" required>
+
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newBirthday" placeholder="Fecha Nacimiento" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newOccupation" placeholder="Cargo" required>
+
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newStartD" placeholder="Fecha Ingreso" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newFinalD" placeholder="Adenda de Contrato" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6" class="form-control input-lg" name="newPay" placeholder="Sueldo" required>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <input type="number" class="form-control input-lg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" name="newPhone" placeholder="Telefono" required>
+                </div>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control input-lg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" name="newCPhone" placeholder="Celular" required>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control input-lg" name="newMail" placeholder="Email" required>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="row">
+                
+                <div class="col-sm-4">
+                  <input type="text" maxlength="9" class="form-control input-lg" name="newPayA" placeholder="N° Cuenta Sueldo" required>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" maxlength="9" class="form-control input-lg" name="newPayC" placeholder="N° Cuenta CTS" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  
+                    <input type="text" class="form-control input-lg" name="newDegree" placeholder="Carrera" required>
+
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control input-lg" name="newInst" placeholder="Institucion" required>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkDo" name="checkDo">
+                    <label class="form-check-label" for="checkDo">Documentos Terminos de Referencia</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newYold" placeholder="Edad" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newCussp" placeholder="CUSSP" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newSnp" placeholder="SNP" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newFl" placeholder="Flujo" required>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="input-group">
+                    
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                    <input type="text" class="form-control input-lg" name="newMix" placeholder="Mixta" required>
+
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkCon" name="checkCon">
+                    <label class="form-check-label" for="checkCon">Conyugue</label>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkAsig" name="checkAsig">
+                    <label class="form-check-label" for="checkAsig">Asignacion Familiar</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                   <textarea class="form-control" rows="3" name="newObs" placeholder="Observacion" required></textarea>
+                </div>
+              </div>
+
+
+          </div>
+
+        </div>
+         <!--=====================================
+        PIE DEL MODAL
+        ======================================-->
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+          <button type="submit" class="btn btn-primary">Guardar usuario</button>
+
+        </div>
+        <?php
+
+          $crearUsuario = new SealController();
+          $crearUsuario -> ctrCreateSealE();
+
+        ?>
+      </form>
+
+    </div>
+  </div>
+
+</div>
