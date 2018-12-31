@@ -1,13 +1,17 @@
 <?php
-class Delivery{
+class Letter{
 
-	public function print_Delivery(){
+	public function print_Letter(){
 	require_once('tcpdf_include.php');
 	// create new PDF document
 	$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);	
 	//*Formato de Fecha
+	$image_file = getcwd().'\..\images\planes.jpg';
+	$firma = getcwd().'\..\images\firma.jpg';
 	date_default_timezone_set('America/Los_Angeles');
-	$pdf->SetMargins(25,30,25);
+	$pdf->SetMargins(25,20,25);
+	$pdf->setPrintHeader(false);
+	$pdf->setPrintFooter(false);
 	$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
 	$pdf->AddPage();
 	$fecha = date('d')."/".date('n'). "/".date('Y') ;
@@ -15,7 +19,6 @@ class Delivery{
 	$ruc = $_POST['ruc'];
 	$nombre = $_POST['razon'];
 	//**Obteniendo el ID
-
 	$imagen = "Imagen_test";
 	$html = <<<EOF
 	<div style="font-size:8px; ;">
@@ -68,13 +71,18 @@ class Delivery{
 			
 		</tr>
 	</table>
+	</div>
+EOF;
 
-	<table style="text-align:center line-height: 20px; ">
-		<tr>
-			<td style="solid #666; color:#333">$imagen</td>
-			
-		</tr>
-	</table>
+$html2 = <<<EOF
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
+	<br/>
+<div style="font-size:8px; ;">
 	<table style="border:1px solid black; line-height: 20px; ">
 		<tr>
 			<td align="center" width="10%" style="vertical-align: middle; border:1px solid black; solid #666; color:#333" rowspan="6">VENTAJAS</td>
@@ -105,26 +113,21 @@ class Delivery{
 
 	</table>
 
-	<table style=" line-height: 20px; ">
-		<tr>
-			<td style="text-align:right;">
-			firma
-			</td>
-		</tr>
-
-	</table>
 	</div>
 EOF;
 
 $pdf->writeHTML($html, false, false, false, false, '');
+$pdf->Image($image_file, 10, 110, 200, '', 'JPG', '', '', false, 200, '', false, false, 0, 'M', false, false);
 
+$pdf->writeHTML($html2, false, false, false, false, '');
+$pdf->Image($firma, 110, 245, 70, '', 'JPG', '', '', false, 200, '', false, false, 0, 'M', false, false);
 
 $pdf->Output('letter.pdf', 'I');
 	}
 }
 
-$prueba = new Delivery();
+$prueba = new Letter();
 
-$prueba -> print_Delivery();
+$prueba -> print_Letter();
 
 ?>

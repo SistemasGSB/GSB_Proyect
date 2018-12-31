@@ -64,4 +64,83 @@ $(document).ready( function () {
   date_n.datepicker(opt);
   date_i.datepicker(opt);
   date_f.datepicker(opt);
+
+
+jQuery.validator.addMethod("direc", function(value, element, param) {
+  return value.match(new RegExp(param + "$"));
+}, "Inicial Mayuscula, Numeros , Letras o ','");
+
+jQuery.validator.addMethod("pay", function(value, element, param) {
+  return value.match(new RegExp(param + "$"));
+}, "Formato 123-1234567890");
+  $('#seal-form').validate({ // initialize the plugin
+        rules: {
+
+            newName: {
+                required: true,
+                accept: "^[A-Z][a-zA-Z ]+",
+            },
+            newSurname: {
+                accept: "^[A-Z][a-z ]+",
+                required: true,
+            },
+
+            newSurnamem: {
+                accept: "^[A-Z][a-z ]+",
+                required: true,
+            },
+            newAddress: {
+                direc: "^[A-Z][a-zA-Z0-9, ]+",
+                required: true,
+            },
+            newDistrict: {
+                accept: "^[A-Z][a-z ]+",
+                required: true,
+            },
+            newOccupation: {
+                accept: "^[A-Z][a-z ]+",
+                required: true,
+            },
+            newDegree: {
+                accept: "^[A-Z][a-z ]+",
+                required: true,
+            },
+            newInst: {
+                accept: "^[A-Z][a-z ]+",
+                required: true,
+            },
+            newPayA:{
+                pay: "[0-9-]+",
+                required: true,
+            },
+            newPayC:{
+                pay: "[0-9-]+",
+                required: true,
+            },
+
+            
+        },
+        showErrors: function(errorMap, errorList) {
+            $.each(this.successList, function(index, value) {
+              return $(value).popover("hide");
+            });
+            return $.each(errorList, function(index, value) {
+              var _popover;
+              _popover = $(value.element).popover({
+                trigger: "manual",
+                placement: "top",
+                content: value.message,
+                template: "<div class=\"popover\"><div class=\"arrow\"></div><div class=\"popover-inner\"><div class=\"popover-content\" id=\"validacion\"><p></p></div></div></div>"
+              });
+              // Bootstrap 3.x :      
+              _popover.data("bs.popover").options.content = value.message;
+              // Bootstrap 2.x :
+              //_popover.data("popover").options.content = value.message;
+              return $(value.element).popover("show");
+            });
+        },
+        //messages: {},
+        //errorElement : 'div',
+        //errorLabelContainer: '.errorTxt'
+    });
   });

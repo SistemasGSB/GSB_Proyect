@@ -47,7 +47,7 @@
     <div class="box">
 
       <div class="box-body">
-        <form id="form_ruc" action="tools/tcpdf/pdf/letter.php" role="form" method="post" enctype="multipart/form-data">
+        <form id="form_ruc" action="tools/tcpdf/pdf/letter.php" target="_blank" role="form" method="post" enctype="multipart/form-data">
           <div class="form-group col-sm-5">
             <input type="text" class="form-control" id="ruc" name="ruc" placeholder="RUC" required>
           </div>

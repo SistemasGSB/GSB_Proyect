@@ -26,7 +26,7 @@
   
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAddSealE">
           
-          Agregar usuario
+          Agregar Personal
 
         </button>
 
@@ -113,12 +113,12 @@
    <div class="modal-dialog" style="width:1250px;">
 
     <div class="modal-content">
-      <form role="form" method="post" enctype="multipart/form-data" id="user-form">
+      <form role="form" method="post" enctype="multipart/form-data" id="seal-form">
            <div class="modal-header" style="background:#3c8dbc; color:white">
 
             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            <h4 class="modal-title">Agregar usuario</h4>
+            <h4 class="modal-title">Agregar Personal SEAL</h4>
 
           </div>
             <div class="modal-body">
@@ -256,7 +256,7 @@
                   <input type="number" class="form-control input-lg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" name="newCPhone" placeholder="Celular" required>
                 </div>
                 <div class="col-sm-4">
-                  <input type="text" class="form-control input-lg" name="newMail" placeholder="Email" required>
+                  <input type="email" class="form-control input-lg" name="newMail" placeholder="Email" required>
                 </div>
               </div>
             </div>
@@ -266,10 +266,10 @@
               <div class="row">
                 
                 <div class="col-sm-4">
-                  <input type="text" maxlength="9" class="form-control input-lg" name="newPayA" placeholder="N° Cuenta Sueldo" required>
+                  <input type="text" maxlength="15" class="form-control input-lg" name="newPayA" placeholder="N° Cuenta Sueldo" required>
                 </div>
                 <div class="col-sm-4">
-                  <input type="text" maxlength="9" class="form-control input-lg" name="newPayC" placeholder="N° Cuenta CTS" required>
+                  <input type="text" maxlength="15" class="form-control input-lg" name="newPayC" placeholder="N° Cuenta CTS" required>
                 </div>
               </div>
             </div>
@@ -301,7 +301,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control input-lg" name="newYold" placeholder="Edad" required>
+                    <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" class="form-control input-lg" name="newYold" placeholder="Edad" required>
 
                   </div>
                 </div>
@@ -310,7 +310,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control input-lg" name="newCussp" placeholder="CUSSP" required>
+                    <input type="text" maxlength="12" class="form-control input-lg" name="newCussp" placeholder="CUSSP" required>
 
                   </div>
                 </div>
@@ -328,7 +328,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control input-lg" name="newFl" placeholder="Flujo" required>
+                    <input type="text" class="form-control input-lg" name="newFl" placeholder="Flujo">
 
                   </div>
                 </div>
@@ -341,7 +341,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-                    <input type="text" class="form-control input-lg" name="newMix" placeholder="Mixta" required>
+                    <input type="text" class="form-control input-lg" name="newMix" placeholder="Mixta">
 
                   </div>
                 </div>

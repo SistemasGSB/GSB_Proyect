@@ -77,15 +77,10 @@ class SealModel{
 		
 		$stmt->bindParam(":observacion", $datos["observacion"], PDO::PARAM_STR);
 		
-		var_export($datos);
 		if($stmt->execute()){
-			var_export($stmt->errorInfo());
 			return "ok";	
 
 		}else{
-			var_export($stmt->debugDumpParams());
-			
-			var_export($stmt->errorInfo());
 			return "error";
 		
 		}

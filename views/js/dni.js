@@ -15,7 +15,7 @@ $(function(){
 			var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 			var fi = datos['fecha_i'].split("-");
 			var fa = datos['fecha_a'].split("-");
-			$('#nombre').val(datos['nombre']);
+			$('#nombre').val(datos['nombre']+" " +datos["apellido_p"]+" "+datos["apellido_m"]);
 			$('#direccion').val(datos['direccion']);
 			$('#cargo').val(datos['cargo']);
 			$('#fecha_i').val(fi[2]+" de "+meses[parseInt(fi[1])-1]+" del "+ fi[0]);
