@@ -31,7 +31,7 @@
             <i class="fa fa-th"></i> <span>Escritorio</span>
           </a>
         </li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Personal</span>
             <span class="pull-right-container">
@@ -39,7 +39,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="users"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+            <li><a href="users"><i class="fa fa-circle-o"></i> Usuarios</a></li>
             <li><a href="clients"><i class="fa fa-circle-o"></i> Clientes</a></li>
           </ul>
         </li>
