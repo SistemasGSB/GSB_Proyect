@@ -16,9 +16,13 @@ class AttendanceController{
 			$target_dir = "tmp/";
 			$target_file = $target_dir . "Asistencia.xls";
 			move_uploaded_file($_FILES["path"]["tmp_name"], $target_file);
+
+
+			//var_dump($_FILES["path"]["tmp_name"]);
 			$excel = new PhpExcelReader; // creates object instance of the class
 			$excel->read('tmp\Asistencia.xls'); // reads and stores the excel file data
 			$numRows = $excel->sheets[0]['numRows'];
+			var_dump($numRows);
 			$i = 2;
 			while ( $i <= $numRows) {
 				$date = DateTime::createFromFormat("d/m/Y H:i", $excel->sheets[0]['cells'][$i][3]);

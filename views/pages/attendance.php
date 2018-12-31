@@ -58,6 +58,11 @@
           <span class="input-group-addon">Hora de Entrada<span class="glyphicon glyphicon-time"></span></span>
           <input class="form-control" id="constrain" name="constrain" placeholder="hora de entrada" type="text" value="8:10" /> 
         </div>
+        <div class="col-sm-2">
+        <button type="button" id="borrarA" class="btn btn-danger" data-toggle="modal" >
+          Borrar Asistencias
+        </button>
+        </div>
       </div>
 
       <div class="box-body">

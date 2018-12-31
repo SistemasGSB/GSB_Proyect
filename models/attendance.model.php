@@ -43,4 +43,15 @@ class AttendanceModel{
 
 
 	}
+	static public function mdlTruncateAttendance(){
+		$string = "TRUNCATE TABLE asistencia";
+		$stmt = Connection::connect()->prepare($string);
+		//var_export($datos);
+		$stmt->execute();
+		//var_export($stmt->errorInfo());
+		$stmt= null;
+		return "ok";
+
+
+	}
 }

@@ -169,7 +169,36 @@ $(document).ready(function(){
   $('#constrain').clockpicker({
     autoclose: true
   });
+  $('#borrarA').on('click',function(){
+      console.log("ayuda");
+      var url = 'tools/ajax/borrar_asistencia.php';
+      $.ajax({
+      type:'POST',
+      url:url,
+      dataType: "json",
+      success: function(datos){
+          if(datos['done']==true){
+            swal({
 
+              type: "success",
+              title: "¡Se borro la Asistencia Correctamente!",
+              showConfirmButton: true,
+              confirmButtonText: "Cerrar"
+
+            }).then(function(result){
+
+              if(result.value){
+              
+                window.location = "attendance";
+
+              }
+
+            });
+          }
+      }
+    });
+    return false;
+  });
   
 
 
