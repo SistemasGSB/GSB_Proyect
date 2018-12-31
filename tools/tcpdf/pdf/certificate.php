@@ -17,9 +17,9 @@ class Certificate{
 	$dni = $_POST['dni'];
 	$nombre = $_POST['nombre'];
 	
-	$fecha_i = "26 de junio del año 2018";
-	$fecha_f = "24 de julio del año 2018";
-	$cargo = "Gestor de Atención al Cliente";
+	$fecha_i = $_POST['fecha_i'];
+	$fecha_f= $_POST['fecha_f'];
+	$cargo = $_POST['cargo'];
 	$hoy_l = $fecha;
 	$html = <<<EOF
 	<div style="font-size:10px; ;">
@@ -40,7 +40,7 @@ class Certificate{
 	<table style="line-height: 20px; ">
 		<tr>
 			<td style="text-align:right; solid #666; color:#333">
-	Feliciano Farfan Romero, certifica que la Srta.:
+	Feliciano Farfan Romero, certifica que:
 	</td>
 		</tr>
 	</table>
@@ -54,7 +54,7 @@ class Certificate{
 	<table style="line-height: 20px; ">
 		<tr>
 			<td style="text-align:justify solid #666; color:#333">
-	Identificada con el DNI N° $dni, laboró en nuestra empresa como personal destacado de SOCIEDAD ELECTRICA DEL SUR OESTE S.A., desde el $fecha_i hasta el $fecha_f, desempeñando
+	Identificado con el DNI N° $dni, laboró en nuestra empresa como personal destacado de SOCIEDAD ELECTRICA DEL SUR OESTE S.A., desde el $fecha_i hasta el $fecha_f, desempeñando
 	el cargo de $cargo.
 	</td>
 		</tr>
@@ -62,7 +62,7 @@ class Certificate{
 	<table style="line-height: 20px; ">
 		<tr>
 			<td style="text-align:justify solid #666; color:#333">
-	Se expide el presente documento a solicitud de la interesada para los fines
+	Se expide el presente documento a solicitud del interesado para los fines
 	que crea convenientes.
 	</td>
 		</tr>

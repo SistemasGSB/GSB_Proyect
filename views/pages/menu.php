@@ -55,7 +55,6 @@
             <li><a href="index.php?ruta=dni&val=1" ><i class="fa fa-circle-o"></i> Certificado de Trabajo</a></li>
             <li><a href="index.php?ruta=dni&val=2" idDownload="contract.php"><i class="fa fa-circle-o"></i> Contrato</a></li>
             <li><a href="index.php?ruta=ruc&val=1" idDownload="letter.php"><i class="fa fa-circle-o"></i> Carta de Presentacion</a></li>
-            <li><a href="index.php?ruta=dni&val=3" idDownload="constancy.php"><i class="fa fa-circle-o"></i> Constancias</a></li>
             <li><a href="index.php?ruta=dni&val=4" idDownload="contract_l.php"><i class="fa fa-circle-o"></i> Contrato L.S.</a></li>
             <li><a href="index.php?ruta=dni&val=5" idDownload="contract_p.php"><i class="fa fa-circle-o"></i> Contrato P.E.</a></li>
           </ul>
@@ -70,8 +69,6 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="attendance"><i class="fa fa-circle-o"></i> Asistencias</a></li>
-            <li><a href="pages/accounting/constancy.html"><i class="fa fa-circle-o"></i> Personal</a></li>
-            <li><a href="pages/accounting/delivery.html"><i class="fa fa-circle-o"></i>Planillas</a></li>
           </ul>
         </li>
         <li class="treeview">

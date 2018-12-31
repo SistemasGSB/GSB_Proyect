@@ -91,20 +91,21 @@
           <div class="form-group col-sm-6">
             <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre" readonly="true" required>
           </div>
+          <div class="form-group col-sm-6">
+            <input type="text" class="form-control" id="fecha_i" name="fecha_i" placeholder="Fecha Ingreso" readonly required>  
+          </div>
+          <div class="form-group col-sm-6">
+            <input type="text" class="form-control" id="fecha_f" name="fecha_f" placeholder="Fecha Salida" readonly required>  
+          </div>
+          <div class="form-group col-sm-6">
+            <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Puesto de Trabajo" readonly required>  
+          </div>
           <?php
             if($val!=1){
               echo '<div class="form-group col-sm-6">
                       <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" readonly required>  
                     </div>';
-              echo '<div class="form-group col-sm-6">
-                      <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Puesto de Trabajo" readonly required>  
-                    </div>';
-              echo '<div class="form-group col-sm-6">
-                      <input type="text" class="form-control" id="fecha_i" name="fecha_i" placeholder="Fecha Ingreso" readonly required>  
-                    </div>';
-              echo '<div class="form-group col-sm-6">
-                      <input type="text" class="form-control" id="fecha_f" name="fecha_f" placeholder="Fecha Salida" readonly required>  
-                    </div>';
+              
               echo '<div class="form-group col-sm-6">
                       <input type="text" class="form-control" id="sueldo" name="sueldo" placeholder="Sueldo" readonly required>  
                     </div>';

@@ -134,6 +134,9 @@ jQuery.validator.addMethod("pay", function(value, element, param) {
               });
               // Bootstrap 3.x :      
               _popover.data("bs.popover").options.content = value.message;
+              setTimeout(function () {
+                  $(value.element).popover('hide');
+              }, 3000);
               // Bootstrap 2.x :
               //_popover.data("popover").options.content = value.message;
               return $(value.element).popover("show");

@@ -121,7 +121,6 @@
             <h4 class="modal-title">Agregar Personal SEAL</h4>
 
           </div>
-            <div class="modal-body">
 
           <div class="box-body">
 
@@ -363,7 +362,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-12">
-                   <textarea class="form-control" rows="3" name="newObs" placeholder="Observacion" required></textarea>
+                   <textarea class="form-control" rows="3" name="newObs" placeholder="Observacion"></textarea>
                 </div>
               </div>
 

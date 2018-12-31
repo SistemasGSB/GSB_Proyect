@@ -332,11 +332,14 @@ dirijan al domicilio señalado en la introducción del presente instrumento.
 			<td style="text-align:justify; solid #666; color:#333;">
 
 Se firma este contrato con la previa ratificación de las partes de todas y cada una de las cláusulas del mismo, en
-dos ejemplares de igual tenor, uno para <b> QUASS S.A.C </b>. y otra para <b> EL LOCADOR </b>, en la ciudad de Arequipa, a los 17
-días del mes de Octubre del 2018.
+dos ejemplares de igual tenor, uno para <b> QUASS S.A.C </b>. y otra para <b> EL LOCADOR </b>, en la ciudad de Arequipa, $fecha_f.
 	</td>
 		</tr>
 	</table>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
 	<table>
 		<tr>
 			<td style="text-align:center;">QUASS S.A.C.</td>

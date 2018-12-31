@@ -180,10 +180,14 @@ class Contract_P{
 	Leído cada uno de las cláusulas del presente Contrato de Trabajo, ambos intervinientes dan su conformidad
 	de sus obligaciones y responsabilidades, y dejan expresa constancia que no ha mediado vicios de nulidad o
 	anulabilidad que pudiera invalidarlo, las partes suscriben este documento, extendido por duplicado en la
-	ciudad de Arequipa, a los 31 días del mes de octubre de 2018.
+	ciudad de Arequipa, $fecha_f.
 	</td>
 		</tr>
 	</table>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
+	<br/><br/>
 	<table>
 		<tr>
 			<td style="text-align:center;">EMPLEADOR</td>
